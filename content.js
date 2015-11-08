@@ -1,6 +1,10 @@
 //Creaters: Bogdan Pshonyak & Mark Muego
 
 console.log("content initiated");
+var head = document.getElementsByTagName('head')[0];
+var style = document.createElement("style");
+style.innerHTML = ".tooltip{display: inline;position: relative;}.tooltip:hover:after{background: #333;background: rgba(0,0,0,.8);border-radius: 5px;bottom: 26px;color: #fff;content: attr(title);left: 20%;padding: 5px 15px;position: absolute;z-index: 98;width: 220px;}.tooltip:hover:before{border: solid;border-color: #333 transparent;border-width: 6px 6px 0 6px;bottom: 20px;content: '';left: 50%;position: absolute;z-index: 99;}";
+head.appendChild(style);
 
 function getSel() {
   // get selection text
@@ -53,7 +57,7 @@ function replaceText(allText, sel, replacement) {
     // console.log(twoWords);
     var re = new RegExp(twoWords[0],"gi");
     var newText =
-      "<span style='background-color: #FFFF00'>" + twoWords[1] + "</span>";
+      "<span class='tooltip' style='background-color: #FFFF00' title='" + twoWords[0] + "'>" + twoWords[1] + "</span>";
     processedText = processedText.replace(re, newText);
   }
 
