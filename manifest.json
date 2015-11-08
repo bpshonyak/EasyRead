@@ -3,13 +3,14 @@
   "description": "Shows some of the features of the Context Menus API using an event page",
   "version": "0.7",
   "permissions": ["contextMenus", "activeTab"],
-  "content_scripts": [
-    {
-      "js": ["jquery-1.11.3.min.js", "content.js"],
-      "matches": ["<all_urls>"],
-      "all_frames": true
-    }
-  ],
+  "icons": {
+    "16": "icon.png"
+  },
+  "content_scripts": [{
+    "js": ["jquery-1.11.3.min.js", "content.js"],
+    "matches": ["<all_urls>"],
+    "all_frames": true
+  }],
   "background": {
     "persistent": true,
     "scripts": ["sample.js"]
