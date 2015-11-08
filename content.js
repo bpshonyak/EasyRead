@@ -56,6 +56,20 @@ function replaceText(allText, sel, replacement) {
     var twoWords = replacement[i].split("=");
     // console.log(twoWords);
     var re = new RegExp(twoWords[0],"gi");
+
+    if (twoWords[1].search("/") !== -1) {
+      console.log("before:");
+      console.log(twoWords[1]);
+      // a slash was found!
+      var temp = twoWords[1].split("/");
+      if (temp[0].charAt(0) === "(") {
+        temp[0] += ')';
+      }
+      twoWords[1] = temp[0];
+      console.log('after:');
+      console.log(twoWords[1]);
+    }
+
     var newText =
       "<span class='tooltip' style='background-color: #FFFF00' title='" + twoWords[0] + "'>" + twoWords[1] + "</span>";
     processedText = processedText.replace(re, newText);
