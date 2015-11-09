@@ -1,7 +1,7 @@
 {
-  "name": "Context Menus Sample (with Event Page)",
-  "description": "Shows some of the features of the Context Menus API using an event page",
-  "version": "0.7",
+  "name": "EasyRead",
+  "description": "Allows user to simplify complex words in a selection of text via a context menu.",
+  "version": "0.7.1",
   "permissions": ["contextMenus", "activeTab"],
   "icons": {
     "16": "icon.png"

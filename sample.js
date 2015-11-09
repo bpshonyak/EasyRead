@@ -1,4 +1,5 @@
-//Creaters: Bogdan Pshonyak & Mark Muego
+// Written by Bogdan Pshonyak & Mark Muego
+// for CodeDay Seattle, Fall 2015.
 
 var selText;
 
@@ -9,10 +10,6 @@ function onClickHandler(info, tab) {
     tab.id, {
       code: 'getSel()',
       allFrames: true
-    },
-    function() {
-      //do anything with selText
-      //console.log("selText: " + selText);
     }
   );
 }
@@ -30,17 +27,4 @@ chrome.runtime.onInstalled.addListener(function() {
     "id": "context" + context
   });
   console.log("'" + context + "' item:" + id);
-
-  // Intentionally create an invalid item, to show off error checking in the
-  // create callback.
-  // console.log("About to try creating an invalid item - an error about " +
-  //   "duplicate item child1 should show up");
-  // chrome.contextMenus.create({
-  //   "title": "Oops",
-  //   "id": "child1"
-  // }, function() {
-  //   if (chrome.extension.lastError) {
-  //     console.log("Got expected error: " + chrome.extension.lastError.message);
-  //   }
-  // });
 });
